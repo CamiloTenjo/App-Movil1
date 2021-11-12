@@ -20,7 +20,7 @@ class TiendasApp extends State<Tiendas>{
                 Container(
                   padding: const EdgeInsets.only(bottom:8),
                   child: Text(
-                    'Comidad Rapidas Crmen',
+                    'Comidas Rapidas Carmen',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                         )
