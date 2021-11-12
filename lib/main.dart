@@ -4,7 +4,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:proyecto_1/Tiendas.dart';
 import 'buscar.dart';
 import 'package:flutter/src/widgets/icon.dart';
-
+import 'Tiendas.dart';
+import 'Registro.dart';
 //repo1
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
