@@ -7,6 +7,7 @@ import 'package:flutter/src/widgets/icon.dart';
 import 'Tiendas.dart';
 import 'Registro.dart';
 import 'VistaTienda.dart';
+import 'GestionUsuarios.dart';
 //repo1
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
