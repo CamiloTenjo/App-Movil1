@@ -6,6 +6,7 @@ import 'buscar.dart';
 import 'package:flutter/src/widgets/icon.dart';
 import 'Tiendas.dart';
 import 'Registro.dart';
+import 'VistaTienda.dart';
 //repo1
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -82,6 +83,8 @@ class HomeStar extends State<Home> {
                   child: Text('Lista de mercados'),
                 ),
               ),
+
+
             ],
           ),
         ),

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'VistaTienda.dart';
 
 class Tiendas extends StatefulWidget{
   @override
@@ -41,7 +41,17 @@ class TiendasApp extends State<Tiendas>{
               height: 80,
             child: Image.asset('image/perro.png'),
           ),
-          ElevatedButton(onPressed: (){}, child: Text('Entrar')),
+          ElevatedButton(onPressed: (){}, child:  ElevatedButton(onPressed: () {
+    print("presionado");
+    Navigator.push(
+    context, MaterialPageRoute(builder: (_) => shopview()));
+    }, child:
+    Text('Entrar'),
+    style: ElevatedButton.styleFrom(
+    primary: Colors.blue[600],
+           ),
+          ),
+          ),
         ],
       
       ),
