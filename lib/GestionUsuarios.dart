@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_1/RegistroUsuario.dart';
-
+import 'package:proyecto_1/Login.dart';
 class GestionUsuarios extends StatefulWidget{
   @override
   GestionUsuariosApp createState() => GestionUsuariosApp();
@@ -50,7 +50,9 @@ class GestionUsuariosApp extends State<GestionUsuarios>{
             Padding(padding:
             EdgeInsets.only(top:20),
               child: ElevatedButton(
-                  onPressed: (){},
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (_)=> Login()));
+                  },
                   child: Text("LOgin")
               ),
             ),
