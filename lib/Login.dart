@@ -91,7 +91,7 @@ int flag=0;
               padding: EdgeInsets.only(left: 40, top: 30, right: 10, bottom: 5),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  minimumSize: Size(200, 50),
+                  minimumSize: Size(500, 50),
                 ),
                 onPressed: (){
                  validarDatos();
