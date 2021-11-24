@@ -84,6 +84,38 @@ class HomeStar extends State<Home> {
                   child: Text('Lista de mercados'),
                 ),
               ),
+              Padding(
+                padding:
+                EdgeInsets.only(left: 20, top: 20, right: 20, bottom: 0),
+                child: ElevatedButton(
+                  onPressed: () {
+                    //print("presionado");
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => shopRegister()));
+                  },
+                  child: Text('Registar tienda'),
+                  style: ElevatedButton.styleFrom(
+                      primary: Colors.blue[600],
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(600))),
+                ),
+              ),
+              Padding(
+                padding:
+                EdgeInsets.only(left: 20, top: 20, right: 20, bottom: 0),
+                child: ElevatedButton(
+                  onPressed: () {
+                    //print("presionado");
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => GestionUsuarios()));
+                  },
+                  child: Text('Gestión de usuario'),
+                  style: ElevatedButton.styleFrom(
+                      primary: Colors.blue[600],
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(600))),
+                ),
+              ),
 
 
             ],

@@ -114,7 +114,11 @@ class ShopRegisterApp extends State<shopRegister> {
                   webSite.clear();
                 },
                   child: Text('Regsitrar'),
-
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.blue[600],
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(600)),
+                ),
 
               ),
             ),

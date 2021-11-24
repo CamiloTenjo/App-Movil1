@@ -115,7 +115,10 @@ class RegistroUsuarioApp extends State<RegistroUsuario> {
                   pass.clear();
                 },
                 child: Text('Regsitrar Usuario'),
-
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.blue[600],
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(600))),
 
               ),
             ),

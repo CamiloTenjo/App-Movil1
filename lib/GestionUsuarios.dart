@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_1/RegistroUsuario.dart';
-import 'package:proyecto_1/Login.dart';
+import 'RegistroUsuario.dart';
+import 'Login.dart';
+import 'PassModificar.dart';
 class GestionUsuarios extends StatefulWidget{
   @override
   GestionUsuariosApp createState() => GestionUsuariosApp();
@@ -11,54 +12,151 @@ class GestionUsuariosApp extends State<GestionUsuarios>{
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        title: Text("Gestion Usuarios"),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.lightBlueAccent, Colors.blue.shade600],
+              begin: Alignment.bottomRight,
+              end: Alignment.topLeft,
+            ),
+          ),
+        ),
+        title: Text('Gestion Usuario'),
+        toolbarHeight: 50,
+        elevation: 20.00,
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: EdgeInsets.all(20),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(padding:
-            EdgeInsets.only(top:20),
-            child: ElevatedButton(
-              onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (_)=> RegistroUsuario()));
-              },
-              child: Text("Registro de Usuario")
-            ),  
-            ),
-            Padding(padding:
-            EdgeInsets.only(top:20),
+            Padding(
+              padding:
+              EdgeInsets.only(bottom:5, top: 5, right: 70),
               child: ElevatedButton(
-                  onPressed: (){},
-                  child: Text("Cambio de password")
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (_)=> RegistroUsuario()));
+                },
+                child: Text('Registro de Usuario'),
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.blue[600],
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(600))),
               ),
             ),
-            Padding(padding:
-            EdgeInsets.only(top:20),
+            Padding(
+              padding:
+              EdgeInsets.only(top:5, bottom:5),
               child: ElevatedButton(
-                  onPressed: (){},
-                  child: Text("Inhabilitar Usuario")
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (_) => Login()));
+                },
+                child:Text("Login"),
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.blue[600],
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(600))),
               ),
             ),
-            Padding(padding:
-            EdgeInsets.only(top:20),
+            Padding(
+              padding:
+              EdgeInsets.only(bottom:5, top: 5),
               child: ElevatedButton(
-                  onPressed: (){},
-                  child: Text("Actualizar Usuario")
+                onPressed: (){},
+                child: Text('Modificar Usuario'),
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.blue[600],
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(600))),
               ),
             ),
-            Padding(padding:
-            EdgeInsets.only(top:20),
+            Padding(
+              padding:
+              EdgeInsets.only(bottom:5, top: 5),
               child: ElevatedButton(
-                  onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (_)=> Login()));
-                  },
-                  child: Text("LOgin")
+                onPressed: (){
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (_) => PassModificar()));
+                },
+                child: Text('Cambio de Contraseña'),
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.blue[600],
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(600))),
+              ),
+            ),
+            Padding(
+              padding:
+              EdgeInsets.only(bottom:5, top: 5),
+              child: ElevatedButton(
+                onPressed: (){
+                  // Navigator.push(
+                  //   context, MaterialPageRoute(builder: (_) => BajaUsuario()));
+                  mensaje("Inactivar Usuario","¿Desea inactivar al usuario?");
+                },
+                child: Text('Dar de baja'),
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.blue[600],
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(600))),
               ),
             ),
           ],
-        )
+        ),
       ),
     );
   }
+  void mensaje(String titulo, String mess) {
+    showDialog(
+        context: context,
+        builder: (buildcontext) {
+          return AlertDialog(
+            title: Text(titulo),
+            content: Text(mess),
+            actions: <Widget>[
+              Padding(
+                padding: EdgeInsets.only(left: 40, top: 30, right: 5, bottom: 5),
+                child: TextField(
+                  // controller: correo,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20)),
+                    labelText: 'Correo',
+                    hintText: 'Digite el correo',
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 40, top: 30, right: 5, bottom: 5),
+                child: TextField(
+                  // controller: correo,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20)),
+                    labelText: 'Contraseña',
+                    hintText: 'Digite Contraseña',
+                  ),
+                ),
+              ),
+              RaisedButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child:
+                Text("Cancelar", style: TextStyle(color: Colors.blueGrey)),
+
+              ),
+              RaisedButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child:
+                Text("Aceptar", style: TextStyle(color: Colors.blueGrey)),
+              ),
+
+            ],
+          );
+        });
+  }
 }
+
